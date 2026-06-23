@@ -137,7 +137,7 @@ if uploaded_file is not None:
     axs1[0, 0].imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
     axs1[0, 0].plot(x_axis, [center_y]*len(x_axis), 'r-', alpha=0.5, label='主采样线')
     axs1[0, 0].scatter(peaks_center, [center_y]*len(peaks_center), c='red', s=10, zorder=5)
-    axs1[0, 0].set_title('图1: 三线空间采样与波阵面提取', fontsize=14, fontweight='bold')
+    axs1[0, 0].set_title('图1: 超声波波峰识别', fontsize=14, fontweight='bold')
     axs1[0, 0].axis('off')
 
     axs1[0, 1].plot(x_axis, profile_center, 'k-', linewidth=1.5)
