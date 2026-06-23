@@ -151,7 +151,7 @@ if uploaded_file is not None:
     axs1[1, 0].plot(source_x, source_y, 'r*', markersize=15, label='虚拟点声源')
     for px in peaks_center[::2]: 
         radius = np.sqrt((px - source_x)**2 + (center_y - source_y)**2)
-        circle = plt.Circle((source_x, source_y), radius, color='blue', fill=False, linestyle=':', linewidth=1.5)
+        circle = plt.Circle((source_x, source_y), radius, color='pink', fill=False, linestyle=':', linewidth=1.5)
         axs1[1, 0].add_patch(circle)
     axs1[1, 0].set_title('图3: 声源位置反演结果', fontsize=14, fontweight='bold')
     axs1[1, 0].axis('off')
