@@ -144,6 +144,8 @@ if uploaded_file is not None:
     axs1[0, 1].scatter(peaks_center, peak_intensities, color='red', marker='X', s=80)
     axs1[0, 1].set_title(f'图2: 测量结果 (波长 λ = {wavelength_mm:.2f} mm, 声速 v = {sound_speed_m_s:.2f} m/s)', fontsize=14, fontweight='bold')
     axs1[0, 1].grid(True, linestyle='--', alpha=0.6)
+    axs1[0, 1].set_xlabel('传播距离 x (pixel)', fontsize=12)
+    axs1[0, 1].set_ylabel('图像灰度值', fontsize=12)
 
     axs1[1, 0].imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
     axs1[1, 0].plot(source_x, source_y, 'r*', markersize=15, label='虚拟点声源')
