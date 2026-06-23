@@ -142,7 +142,7 @@ if uploaded_file is not None:
 
     axs1[0, 1].plot(x_axis, profile_center, 'k-', linewidth=1.5)
     axs1[0, 1].scatter(peaks_center, peak_intensities, color='red', marker='X', s=80)
-    axs1[0, 1].set_title(f'图2: 测量结果 (波长 λ = {wavelength_mm:.2f} mm, 声速 v = {sound_speed_m_s:.2f} m/s)', fontsize=14, fontweight='bold')
+    axs1[0, 1].set_title(f'图2: 采样线灰度分布 (波长 λ = {wavelength_mm:.2f} mm, 声速 v = {sound_speed_m_s:.2f} m/s)', fontsize=14, fontweight='bold')
     axs1[0, 1].grid(True, linestyle='--', alpha=0.6)
     axs1[0, 1].set_xlabel('像素点', fontsize=12)
     axs1[0, 1].set_ylabel('灰度值', fontsize=12)
