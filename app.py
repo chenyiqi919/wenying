@@ -11,13 +11,13 @@ import plotly.graph_objects as go
 
 # ================= 网页基础配置 =================
 st.set_page_config(page_title="超声波物理特征数字分析平台", layout="wide")
-st.title("🌊 超声波干涉与传播空间高级分析系统")
-st.markdown("上传纹影法拍摄的超声波干涉/传播图像，系统将自动进行波阵面提取、声速推算及 **交互式 3D** / FFT 高阶分析。")
+st.title("超声波物理特征数字分析平台")
+st.markdown("上传纹影法拍摄的超声波图像，系统将自动进行波阵面提取、声速推算及 **交互式 3D** / FFT 高阶分析。")
 
 # 侧边栏：参数设置
 st.sidebar.header("⚙️ 实验参数设置")
-real_diameter_mm = st.sidebar.number_input("凹面镜视场真实直径 (mm)", value=203.0, step=1.0)
-frequency_hz = st.sidebar.number_input("超声波发射频率 (Hz)", value=40000.0, step=100.0)
+real_diameter_mm = st.sidebar.number_input("凹面镜直径 (mm)", value=203.0, step=1.0)
+frequency_hz = st.sidebar.number_input("超声波频率 (Hz)", value=40000.0, step=100.0)
 
 # ================= 字体乱码终极修复 (强制云端加载中文字体) =================
 @st.cache_resource
@@ -56,7 +56,7 @@ if uploaded_file is not None:
     file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
     image = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
     
-    st.success("图像加载成功！正在进行深度物理特征解析...")
+    st.success("图像加载成功！正在进行物理特征解析...")
     
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
