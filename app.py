@@ -153,14 +153,14 @@ if uploaded_file is not None:
         radius = np.sqrt((px - source_x)**2 + (center_y - source_y)**2)
         circle = plt.Circle((source_x, source_y), radius, color='yellow', fill=False, linestyle=':', linewidth=1.5)
         axs1[1, 0].add_patch(circle)
-    axs1[1, 0].set_title('图3: 二维同心圆反向声源定位', fontsize=14, fontweight='bold')
+    axs1[1, 0].set_title('图3: 声源位置反演结果', fontsize=14, fontweight='bold')
     axs1[1, 0].axis('off')
 
     axs1[1, 1].scatter(peak_radial_distances, peak_intensities, color='blue', s=50)
     if fit_success:
         r_smooth = np.linspace(np.min(peak_radial_distances), np.max(peak_radial_distances), 100)
         axs1[1, 1].plot(r_smooth, realistic_decay(r_smooth, *popt), 'r-', linewidth=2.5, label=r'综合衰减模型')
-    axs1[1, 1].set_title('图4: 超声波能量衰减物理分析', fontsize=14, fontweight='bold')
+    axs1[1, 1].set_title('图4: 超声波能量衰减分析', fontsize=14, fontweight='bold')
     axs1[1,1].set_xlabel('距声源距离', fontsize=12)
     axs1[1,1].set_ylabel('波峰灰度值', fontsize=12)
     axs1[1, 1].grid(True, linestyle='--', alpha=0.6)
